@@ -9,22 +9,91 @@
     <style>
         * {
             cursor: url('media/icons8-sword-94.png'), auto;
+            background-color: #3b424c;
         }
+
+        .button {
+            width: 200px;
+            height: 200px;
+            font-family: inherit;
+            font-size: 20px;
+            border-radius: 7px;
+            border: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 5px;
+            outline: none;
+            position: relative;
+            background: linear-gradient(25deg, #525a65, #3b424c);
+            color: rgba(255, 255, 255, .8);
+            text-shadow: 0 0 2px rgba(255, 255, 255, .2);
+            box-shadow: inset 2px -1px 1px 0 rgba(255, 255, 255, .2),
+                inset -3px 2px 5px 0 rgba(0, 0, 0, .2),
+                4px 1px 1px 0 rgba(0, 0, 0, .5),
+                -1px -3px 1px 0 rgba(0, 0, 0, .5),
+                4px -3px 1px 0 rgba(0, 0, 0, .5),
+                -1px -1px 5px 0 rgba(0, 0, 0, .5);
+            /* 5px -1px 1px 0 rgba(255, 255, 255, .3); */
+            }
+
+            .button:active {
+            box-shadow: inset 2px -1px 1px 0 rgba(255, 255, 255, .2),
+                inset -3px 2px 5px 0 rgba(0, 0, 0, .2),
+                3px 1px 1px 0 rgba(0, 0, 0, .5),
+                -1px -1px 1px 0 rgba(0, 0, 0, .5),
+                3px -1px 1px 0 rgba(0, 0, 0, .5),
+                -1px -1px 5px 0 rgba(0, 0, 0, .5),
+                4px 0 1px 0 rgba(255, 255, 255, .3);
+            transform: translate(1px, -1px);
+            }
+
+            @media (max-width:768px) {
+                .button {
+                    width: 100px;
+                    height: 100px;
+                    font-size: 15px;
+                }
+
+                .buttonCard {
+                    width: 50% !important;
+                }
+
+                .col-sm-4 {
+                    flex: 0 0 auto;
+                    width: 33.33333333%;
+                }
+
+                .card-body {
+                    padding: 0 !important;
+                    margin: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .row>* {
+                    padding-right: 0;
+                    padding-left: 0;
+                }
+            }
+
+
     </style>
 </head>
 
 <body>
 
 
-    <div class="container mx-auto mt-4 bg-dark p-4">
+    <div class="container mx-auto mt-4 p-4">
 
         <div class="row gap-1 d-flex justify-content-center align-items-center">
         <!-- Boton 1-->
-          <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+          <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
                 <div class="card-body">
-                    <h5 class="card-title">Bruh</h5>
-                    <button type="button" onclick="sonido.play()" class="btn btn-success mr-2">Play</button>
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido.play()">Bruh</button>
                     <script>
                         var sonido = new Audio();
                         sonido.src = "./media/brah-sound-effect-best-sound-effects.mp3"
@@ -35,7 +104,7 @@
         
         <!-- Boton 2-->
 
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Cuanto he chambeado</h5>
@@ -46,15 +115,14 @@
                     </script>
                 </div>
             </div>
-        </div>   
+        </div>    -->
         
         <!-- Boton 3-->
 
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
                 <div class="card-body">
-                    <h5 class="card-title">Pedo</h5>
-                    <button type="button" onclick="sonido3.play()" class="btn btn-success mr-2">Play</button>
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido3.play()">Pedo</button>
                     <script>
                         var sonido3 = new Audio();
                         sonido3.src = "./media/dry-fart.mp3"
@@ -65,7 +133,7 @@
           
         <!-- Boton 4-->
 
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">No pueden quitarme mi chamba</h5>
@@ -76,11 +144,11 @@
                     </script>
                 </div>
             </div>
-        </div> 
+        </div>  -->
 
         <!-- Boton 5-->
 
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Norman se fue a las fondas</h5>
@@ -91,10 +159,10 @@
                     </script>
                 </div>
             </div>
-        </div> 
+        </div>  -->
 
         <!-- Boton 6-->
-
+<!-- 
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -106,15 +174,14 @@
                     </script>
                 </div>
             </div>
-        </div> 
+        </div>  -->
           
         <!-- Boton 7-->
 
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
                 <div class="card-body">
-                    <h5 class="card-title">Roblox death</h5>
-                    <button type="button" onclick="sonido7.play()" class="btn btn-success mr-2">Play</button>
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido7.play()">UH</button>
                     <script>
                         var sonido7 = new Audio();
                         sonido7.src = "./media/roblox-death-sound-effect.mp3"
@@ -125,11 +192,10 @@
 
         <!-- Boton 8 -->
 
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
                 <div class="card-body">
-                    <h5 class="card-title">Dross perturbador</h5>
-                    <button type="button" onclick="sonido8.play()" class="btn btn-success mr-2">Play</button>
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido8.play()">Dross perturbador</button>
                     <script>
                         var sonido8 = new Audio();
                         sonido8.src = "./media/sonido-perturbador.mp3"
@@ -140,11 +206,10 @@
 
         <!-- Boton 9 -->
 
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
                 <div class="card-body">
-                    <h5 class="card-title">Spiderman meme</h5>
-                    <button type="button" onclick="sonido9.play()" class="btn btn-success mr-2">Play</button>
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido9.play()">Spiderman</button>
                     <script>
                         var sonido9 = new Audio();
                         sonido9.src = "./media/spiderman-meme-song.mp3"
@@ -155,11 +220,10 @@
 
         <!-- Boton 10 -->
           
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
                 <div class="card-body">
-                    <h5 class="card-title">Risa</h5>
-                    <button type="button" onclick="sonido10.play()" class="btn btn-success mr-2">Play</button>
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido10.play()">Risa</button>
                     <script>
                         var sonido10 = new Audio();
                         sonido10.src = "./media/risaviejo.mp3"
@@ -170,11 +234,10 @@
 
         <!-- Boton 11 -->
           
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
                 <div class="card-body">
-                    <h5 class="card-title">Campana dross</h5>
-                    <button type="button" onclick="sonido11.play()" class="btn btn-success mr-2">Play</button>
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido11.play()">TIN Dross</button>
                     <script>
                         var sonido11 = new Audio();
                         sonido11.src = "./media/tindross.mp3"
@@ -185,11 +248,10 @@
 
         <!-- Boton 12 -->
           
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
                 <div class="card-body">
-                    <h5 class="card-title">Josh Hutcherson</h5>
-                    <button type="button" onclick="sonido12.play()" class="btn btn-success mr-2">Play</button>
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido12.play()">Josh</button>
                     <script>
                         var sonido12 = new Audio();
                         sonido12.src = "./media/that-one-josh-hutcherson-whistle-edit.mp3"
@@ -197,5 +259,174 @@
                 </div>
             </div>
         </div>  
+
+        <!-- Boton 13 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido13.play()">Calamardo</button>
+                    <script>
+                        var sonido13 = new Audio();
+                        sonido13.src = "./media/calamardo_F0yG3Xl.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>  
+
+        <!-- Boton 14 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido14.play()">Fortnite song</button>
+                    <script>
+                        var sonido14 = new Audio();
+                        sonido14.src = "./media/fortnite-dance-moves-emote-music-tv9iv8cxmo0-1.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boton 15 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido15.play()">Lego yoda</button>
+                    <script>
+                        var sonido15 = new Audio();
+                        sonido15.src = "./media/lego-yoda-death-sound-effect.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boton 16 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido16.play()">Noo darth vader</button>
+                    <script>
+                        var sonido16 = new Audio();
+                        sonido16.src = "./media/nooo.swf.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boton 17 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido17.play()">oh my god</button>
+                    <script>
+                        var sonido17 = new Audio();
+                        sonido17.src = "./media/oh-my-god-meme.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boton 18 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido18.play()">spongebob fail</button>
+                    <script>
+                        var sonido18 = new Audio();
+                        sonido18.src = "./media/spongebob-fail.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Boton 19 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido19.play()">grito Tom</button>
+                    <script>
+                        var sonido19 = new Audio();
+                        sonido19.src = "./media/toms-screams.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boton 20 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido20.play()">boom</button>
+                    <script>
+                        var sonido20 = new Audio();
+                        sonido20.src = "./media/vine-boom-sound-effect_KT89XIq.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boton 21 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido21.play()">skibidi boom</button>
+                    <script>
+                        var sonido21 = new Audio();
+                        sonido21.src = "./media/skibidi-bop-mm-dada_KmPaFlU.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boton 22 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido22.play()">estoy loco</button>
+                    <script>
+                        var sonido22 = new Audio();
+                        sonido22.src = "./media/estoy-loco.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boton 23 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido23.play()">risa ardilla</button>
+                    <script>
+                        var sonido23 = new Audio();
+                        sonido23.src = "./media/risa-de-ardilla.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Boton 23 -->
+
+        <div class="col-md-4 col-sm-4" id="buttonCard">
+            <div>
+                <div class="card-body">
+                    <button type="button" data-type="number" class="button button_type_number" onclick="sonido23.play()">dross empanadas</button>
+                    <script>
+                        var sonido23 = new Audio();
+                        sonido23.src = "./media/empanadas.mp3"
+                    </script>
+                </div>
+            </div>
+        </div>
 
     </div>
